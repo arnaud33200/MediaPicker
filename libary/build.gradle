@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
-//apply from: '../deps.gradle'
 
 //./gradlew bintrayUpload
 publish {
@@ -8,37 +7,35 @@ publish {
     groupId = 'net.alhazmy13.MediaPicker'
     artifactId = 'libary'
     uploadName = 'MediaPicker'
-    publishVersion = '2.4.2-beta'
+    publishVersion = '2.4.4'
     desc = 'MediaPicker'
     dryRun = false
     website = 'https://github.com/alhzmy13/MediaPicker'
 }
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
+
     lintOptions {
         abortOnError false
     }
-
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-
     }
 }
 
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:27.1.0'
 }
